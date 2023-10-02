@@ -1,0 +1,26 @@
+version: '3.9'
+
+#NOM DU PROJET : dock_spring_sql
+
+services:
+  springboot-app:
+    container_name: springboot-app_ctn
+    image: springboot-app_img
+    restart: always
+    build: .
+    ports:
+      - 8080:8080
+    environment:
+      MYSQL_HOST: mysqldb
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+      MYSQL_PORT: 3306
+
+  mysqldb:
+    container_name: mysqldb_ctn
+    image: mysql
+    ports:
+      - 3307:3306
+    environment:
+      MYSQL_DATABASE: test
+      MYSQL_ROOT_PASSWORD: root
