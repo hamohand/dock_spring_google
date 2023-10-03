@@ -8,7 +8,7 @@ public class Debut {
 
     @GetMapping("/")
     public  String affiche(){
-        return "Azul fellawen";
+        return "Azul fellawen 03/10 9:00";
     }
 
 }
